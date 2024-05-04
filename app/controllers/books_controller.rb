@@ -1,9 +1,9 @@
 class BooksController < ApplicationController
   def new
-    @user = User.new
-    @users = User.all
     @book = Book.new
     @books = Book.all
+    @user = User.new
+    @users = User.all
   end
   
   def create
@@ -18,7 +18,9 @@ class BooksController < ApplicationController
   end
 
   def show
+    
   end 
+  
   
   private
 
