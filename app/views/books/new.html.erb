@@ -1,4 +1,15 @@
-
+<h1>User info</h1>
+  <% @users.each do |user| %>
+    <%= user.name %>
+    <%= user.introduction %>
+  <% end %>
+  
+<h1>Books</h1>
+  <% @books.each do |book| %>
+    <%= book.title %>
+    <%= book.body %>
+  <% end %>
+  
 <h1>New book</h1>
 <%= form_with model: @post_image do |f| %>
  
