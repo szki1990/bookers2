@@ -1,5 +1,6 @@
 <h5>Welcome! You have signed up successfully.</h5>
 <h1>User info</h1>
+  
   <% if @users.present? %>
     <p><strong>name<%= @users.first.name %></strong></p>
     <p><strong>introduction<%= @users.first.introduction %></strong></p>
@@ -8,7 +9,7 @@
   <% end %>
   
   <% if @user == current_user %> 
-    <%= link_to "編集", edit_users_path(@user) %>
+    <%#= link_to "編集", edit_users_path(@user) %>
   <% end %>
   
 <h1>Books</h1>
@@ -17,6 +18,11 @@
     <%= book.body %>
   <% end %>
   
+<%#= link_to '<i class="fa-solid fa-user-gear"></i>'.html_safe, edit_users_path(@user) %>
+<%= link_to  edit_user_path(@user), class: "btn btn-warning btn-sm btn-block" do %>
+  <i class="fa-solid fa-user-gear"></i>
+<% end %>
+
 <h1>New book</h1>
 <%= form_with model: @book do |f| %>
  
