@@ -12,7 +12,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.user_id = current_user.id
     if @user.save
-      redirect_to new_book_path
+      flash[:notice] = "Welcome! You have signed up successfully."
+      redirect_to new_book_path(@user)
     else
       render :edit
     end 
