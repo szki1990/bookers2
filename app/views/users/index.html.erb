@@ -1,4 +1,4 @@
-<h1>User info</h1>データの内容詳細
+<h1>User info自分の投稿一覧ページ</h1>
 
   <% @books.each do |book| %>
     <%= image_tag @user.get_profile_image %>
@@ -7,7 +7,6 @@
       <% end %>
     <%= book.title %>
     <%= book.body %>
-    <%= link_to 'Edit', edit_book_path(book) %>
-    <%= link_to 'Destroy', book_path(book), method: :delete, "data-confirm" => "本当に消しますか？" %>
+    <%= link_to 'Edit', edit_book_path(book.id) %>
+    <%= link_to 'Destroy', book_path(book.id), method: :delete, "data-confirm" => "本当に消しますか？" %>
   <% end %>
-  
