@@ -1,11 +1,11 @@
-<h1>User info</h1>データの内容詳細
+<h1>User infoデータの内容詳細</h1>
 
   <% @books.each do |book| %>
     <%= image_tag @user.get_profile_image %>
       <% if @users.present? %> 
-      <p><strong><%= @user.name %></strong></p>
+      <p><strong><%= link_to @user.name, user_path %></strong></p>
       <% end %>
-    <%= book.title %>
+    <%= link_to book.title, book_path %>
     <%= book.body %>
     <%= link_to 'Edit', edit_book_path(book) %>
     <%= link_to 'Destroy', book_path(book), method: :delete, "data-confirm" => "本当に消しますか？" %>
