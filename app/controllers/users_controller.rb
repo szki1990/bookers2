@@ -20,15 +20,16 @@ class UsersController < ApplicationController
     else
       @books = Book.all
       @user = current_user
-      #@users = User.all
+      @users = User.all
       render:index
     end 
   end 
   
   def show
+    @book = Book.new
     @books = Book.all
-    @user = current_user
-    @users = User.all
+    @user = current_user || User.find(params[:id])
+    #@users = User.all
   end 
   
   def update

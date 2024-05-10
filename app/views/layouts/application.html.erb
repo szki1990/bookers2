@@ -9,13 +9,18 @@
     <script src="https://kit.fontawesome.com/83ea46e6d2.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      .icon-white {
+        color: white;
+       }
+    </style>
   </head>
 
   <body class="d-flex flex-column vh-100">
     <header class="shadow-sm" style="">
-      <nav class="navbar navbar-light">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <p class="top"><%= link_to 'Bookers', "/" %></p>
+          <p class="top"><%= link_to 'Bookers', "/",style: "color: white;" %></p>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -23,37 +28,37 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
             <li class="nav-item">
-              <i class="fa-solid fa-house"></i>
-              <%= link_to 'Home', user_path(:id), class: 'nav-link text-dark' %>
+              <i class="fa-solid fa-house icon-white"></i>
+              <%= link_to 'Home', user_path(@user), class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <i class="fa-solid fa-users"></i>
-              <%= link_to 'Users', users_path, class: 'nav-link text-dark' %>
+              <i class="fa-solid fa-users icon-white"></i>
+              <%= link_to 'Users', users_path, class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <i class="fa-solid fa-book-open"></i>
-              <%= link_to 'Books', books_path, class: 'nav-link text-dark' %>
+              <i class="fa-solid fa-book-open icon-white"></i>
+              <%= link_to 'Books', books_path, class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <i class="fa-solid fa-right-from-bracket"></i>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
+              <i class="fa-solid fa-right-from-bracket icon-white"></i>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
             </li>
             <% else %>
             <li class="nav-item">
-              <i class="fa-solid fa-house"></i>
-              <%= link_to 'Home', root_path, class: 'nav-link text-dark' %>
+              <i class="fa-solid fa-house icon-white"></i>
+              <%= link_to 'Home', root_path, class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <i class="fa-solid fa-link"></i>
-              <%= link_to 'About', homes_about_path, class: 'nav-link text-dark' %>
+              <i class="fa-solid fa-link icon-white"></i>
+              <%= link_to 'About', homes_about_path, class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <i class="fa-solid fa-user-plus"></i>
-              <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-dark' %>
+              <i class="fa-solid fa-user-plus icon-white"></i>
+              <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-light' %>
             </li>
             <li class="nav-item">
-              <i class="fa-solid fa-right-to-bracket"></i>
-              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-dark' %>
+              <i class="fa-solid fa-right-to-bracket icon-white"></i>
+              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-light' %>
             </li>
             <% end %>
             </ul>
