@@ -25,10 +25,10 @@ class BooksController < ApplicationController
   end 
 
   def index
+    @book = Book.new
     @books = Book.all
-    @user = user.find(params[:id])
-    @users = User.all
-    @book = @user.book
+    @user = User.all
+    #@users = @book.user
   end
 
   def show

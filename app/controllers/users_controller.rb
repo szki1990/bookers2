@@ -30,8 +30,8 @@ class UsersController < ApplicationController
     if current_user == User.find(params[:id])
       @books = current_user.books
     else
-    @user = User.find(params[:id])
-    @books = @user.books
+      @user = User.find(params[:id])
+      @books = @user.books
     end 
   end 
   
