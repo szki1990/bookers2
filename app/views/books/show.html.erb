@@ -18,9 +18,9 @@
               </td>
               <td><%= link_to @book.title, book_path %></td>
               <td><%= @book.body %></td>
-              <% if @book.user == current_user %>
-              <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-success" %></td>
-              <td><%= link_to 'Destroy', book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" %></td>
+              <% if @book.user_id == current_user.id %>
+              <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-success"if @book.user_id == current_user.id %></td>
+              <td><%= link_to 'Destroy', book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" if @book.user_id == current_user.id %></td>
               <% end %>
             </tr>
           </tbody>
