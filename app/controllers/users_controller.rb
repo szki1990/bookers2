@@ -27,10 +27,12 @@ class UsersController < ApplicationController
   
   def show
     @book = Book.new
-    @books = Book.all
-    @user = current_user
-    #@user = User.find(params[:id])
-    #@users = User.all
+    if current_user == User.find(params[:id])
+      @books = current_user.books
+    else
+    @user = User.find(params[:id])
+    @books = @user.books
+    end 
   end 
   
   def update

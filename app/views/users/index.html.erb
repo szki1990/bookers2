@@ -23,9 +23,9 @@
                     <tbody>
                         <% @users.each do |user| %>
                         <tr>
-                            <td><%= image_tag @user.get_profile_image %></td>
+                            <td><%= image_tag user.get_profile_image %></td>
                             <td><% if @users.present? %> 
-                                    <strong><%= @user.name %></strong>
+                                    <strong><%= user.name %></strong>
                                 <% end %>
                             </td>
                             <td><%= link_to 'show', user_path(user) %></td>
