@@ -5,20 +5,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-  #has_many :post_images, dependent: :destroy
+  
   
   has_one_attached :profile_image
   
   validates :name, presence: true
 
-  
-  #def get_profile_image
-   # unless image.attached?
-      #file_path = Rails.root.join('app/assets/images/NoImage.jpeg')
-     # image.attach(io: File.open(file_path), filename: 'default-image.jpeg', content_type: 'image/jpeg')
-    #end 
-      #image
- # end 
   
   def get_profile_image
     unless profile_image.attached?

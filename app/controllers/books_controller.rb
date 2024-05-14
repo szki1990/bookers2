@@ -27,18 +27,13 @@ class BooksController < ApplicationController
   def index
     @book = Book.new
     @books = Book.all
-    @user = User.all
-    #@users = @book.user
+    @user = current_user
   end
 
   def show
     @book = Book.find(params[:id])
-    #@book.user_id = current_user.id if @book.user == current_user
-    #@book.user_id = current_user.id
     @books = Book.all
-    #@user = current_user 
     @user = @book.user
-    #@users = User.all
   end 
   
   def destroy
