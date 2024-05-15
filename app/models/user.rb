@@ -6,10 +6,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   
-  
   has_one_attached :profile_image
   
   validates :name, presence: true
+  
+  validates :name,
+    length: { minimum: 2, maximum: 20}
+    
+  #validates :introduction, length: { minimum: 1, maximum: 50 }, presence: true, on: :update
 
   
   def get_profile_image

@@ -3,7 +3,15 @@
     <div class="row pt-5">
       <div class="mx-auto">
         <h1>Editing Book</h1>
-        
+        <%= flash[:notice] %>
+        <% if @book.errors.any? %>
+                    <%= @book.errors.count %>error prohibited this obj from being <br>saved:
+                    <ul>
+                        <% @book.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                        <% end %>
+                    </ul>
+                <% end %>
         <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
           <div class="title">
             <label for="exampleFormControlInput1" class="form-label">Title</label>
@@ -18,7 +26,7 @@
           </div>
           
           <div class="mt-2">
-            <%= link_to 'Show', book_path(@book) %> | <%= link_to 'Back', books_path(@book) %>
+            <%= link_to 'Show', book_path(@book) %> | <%= link_to 'Back', books_path %>
           </div>  
         
         <% end %>
